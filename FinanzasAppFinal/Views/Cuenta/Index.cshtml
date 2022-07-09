@@ -1,0 +1,36 @@
+﻿<div class ="container">
+    <h1 id="CuentasIndex">Cuentas</h1>
+    <br />
+    <a class="btn btn-primary" href="/cuenta/create">Nueva Cuenta</a>
+    <a class="btn btn-primary" href="/cuenta/creategasto">Nuevo Gasto</a>
+    <a class="btn btn-primary" href="/cuenta/listgastos">Listar Gastos</a>
+    <a class="btn btn-primary" href="/cuenta/createingreso">Nuevo Ingreso</a>
+    <a class="btn btn-primary" href="/cuenta/listingresos">Listar Ingresos</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cuenta</th>
+                <td>Categoria</td>
+                <td>Saldo</td>
+                <td>Moneda</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in ViewBag.Todas)
+            {
+                <tr>
+                    <td>@item.Nombre</td>    
+                    <td>@item.Categoria</td>  
+                    <td>@item.SaldoInicial</td>    
+                    <td>@item.Moneda</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <h6 id="SaldoSoles">Saldo en soles: @ViewBag.MontoSoles</h6>
+    <h6 id="SaldoDolares">Saldo en dolares: @ViewBag.MontoDolares</h6>
+    <hr />
+    <h6>Total en Soles: @ViewBag.Total</h6>
+</div>

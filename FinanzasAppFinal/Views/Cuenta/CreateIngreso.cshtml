@@ -1,0 +1,39 @@
+﻿<div class="container">
+    <div class="row">   
+        <div class="col-6 offset-3">
+            <h1 id="NuevaCuenta">Nuevo Ingreso</h1>
+            <form action="/cuenta/createingreso" method="post">
+
+                <div class="mb-3">
+                    <label for="CuentaId">Cuenta</label>
+                    <select name="CuentaId" id="CuentaId">     
+                        @foreach(var item in ViewBag.Cuentas)
+                        {
+                            <option value="@item.Id">@item.Nombre</option>
+                        }
+                    </select>
+                </div>
+
+                 <div class="mb-3">
+                    <label for="Fecha">Fecha</label>
+                    <input type="datetime-local" class="form-control" Name="Fecha" id="Fecha">    
+                </div>
+
+                <div class="mb-3">
+                    <label for="Descripcion">Descripcion</label> 
+                    <p><textarea name="Descripcion" rows="5" cols="50"></textarea></p>
+                    @Html.ValidationMessage("DescIngVacia")
+                </div>
+
+                <div class="mb-3">
+                    <label for="MontoIngreso">Ingreso</label>
+                    <input type="text" class="form-control" Name="MontoIngreso" id="MontoIngreso">    
+                    @Html.ValidationMessage("IngresoVacio")
+                </div>
+
+                <button class="btn btn-primary">Guardar</button>
+                <a href="/cuenta/index" class="btn btn-link">Cancelar</a>
+            </form>
+         </div>
+    </div>
+</div>

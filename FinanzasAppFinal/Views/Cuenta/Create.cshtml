@@ -1,0 +1,42 @@
+﻿<div class="container">
+    <div class="row">   
+        <div class="col-6 offset-3">
+            <h1 id="NuevaCuenta">Crear Nueva Cuenta</h1>
+            <form action="/cuenta/create" method="post">
+
+                <div class="mb-3">
+                    <label for="Nombre">Nombre de la cuenta</label>
+                    <input type="text" class="form-control" Name="Nombre" id="Nombre">    
+                    @Html.ValidationMessage("Nombre")
+                    @Html.ValidationMessage("NombreVacio")
+                </div>
+
+                <div class="mb-3">
+                    <label for="Categoria">Categoria</label>
+                    <select name="Categoria" id="Categoria">                                                    
+                        <option value="Propio">Propio</option>
+                        <option value="Credito" selected>Crédito</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="SaldoInicial">Saldo Inicial</label>
+                    <input type="text" class="form-control" Name="SaldoInicial" id="SaldoInicial">    
+                    @Html.ValidationMessage("Saldo")
+                    @Html.ValidationMessage("SaldoVacio")
+                </div>
+
+                <div class="mb-3">
+                    <label for="Moneda">Moneda</label>
+                    <select name="Moneda" id="Moneda">                                                    
+                        <option value="Soles">Soles</option>
+                        <option value="Dolares" selected>Dolares</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary">Guardar</button>
+                <a href="/cuenta/index" class="btn btn-link">Cancelar</a>
+            </form>
+         </div>
+    </div>
+</div>

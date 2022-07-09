@@ -1,0 +1,28 @@
+﻿<div class ="container">
+    <h1 id="ListarGastos">Gastos Realizados</h1>
+    <br />
+    <a class="btn btn-primary" href="/cuenta/index">Regresar</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cuenta</th>
+                <td>Fecha</td>
+                <td>Descripcion</td>
+                <td>Monto Gasto</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in ViewBag.Gastos)
+            {
+                <tr>
+                    <td>@item.CuentaNombre</td>    
+                    <td>@item.Fecha</td>  
+                    <td>@item.Descripcion</td>    
+                    <td>@item.MontoGasto</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    @ViewBag.Monto
+</div>

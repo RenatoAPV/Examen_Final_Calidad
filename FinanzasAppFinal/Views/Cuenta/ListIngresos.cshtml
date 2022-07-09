@@ -1,0 +1,27 @@
+﻿<div class ="container">
+    <h1 id="ListaIngresos">Ingresos Recibidos</h1>
+    <br />
+    <a class="btn btn-primary" href="/cuenta/index">Regresar</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cuenta</th>
+                <td>Fecha</td>
+                <td>Descripcion</td>
+                <td>Monto Ingreso</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in ViewBag.Ingresos)
+            {
+                <tr>
+                    <td>@item.CuentaNombre</td>    
+                    <td>@item.Fecha</td>  
+                    <td>@item.Descripcion</td>    
+                    <td>@item.MontoIngreso</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
